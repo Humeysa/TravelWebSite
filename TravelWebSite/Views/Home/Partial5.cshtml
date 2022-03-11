@@ -1,0 +1,16 @@
+﻿@model List<TravelWebSite.Models.Siniflar.Blog>
+
+<div class="box1-left">
+    @foreach (var item in Model)
+    {
+        <div class="bot-img">
+            <a href="/Blog/BlogDetay/@item.Id">
+                <img src="~/images/@item.BlogImage" alt="" style="width: 120px; height: 60px" />
+            </a>
+        </div>
+        <div class="bot-desc1">
+            <p>@item.Aciklama.Substring(0, 50)...</p>
+        </div>
+        <div class="clear"></div>
+    }
+</div>

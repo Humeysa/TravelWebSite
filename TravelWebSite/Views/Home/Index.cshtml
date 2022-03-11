@@ -1,0 +1,95 @@
+﻿@model List<TravelWebSite.Models.Siniflar.Blog>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!DOCTYPE HTML>
+<html>
+<body>
+    <div class="header-banner">
+        <div class="wrap">
+            <div class="banner">
+                <div class="indent">
+                    <h2 class="indent-left margin-bot" style="margin-left:80px">Tatil & Seyahat Bloğum </h2>
+                    <div class="banner-left">
+                        <div class="con-text">
+                            <div class="grid1-img">
+                                <img src="~/web/images/glass.png" alt="">
+                            </div>
+                            <div class="grid1-desc">
+                                <p>Restorantlar</p>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="con-text">
+                            <div class="grid1-img">
+                                <img src="~/web/images/flight.png" alt="">
+                            </div>
+                            <div class="grid1-desc">
+                                <p>Uçuşlar</p>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="con-text">
+                            <div class="grid1-img">
+                                <img src="~/web/images/group.png" alt="">
+                            </div>
+                            <div class="grid1-desc">
+                                <p>Yaplacak Şeyler</p>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="con-text">
+                            <div class="grid1-img">
+                                <img src="~/web/images/key.png" alt="">
+                            </div>
+                            <div class="grid1-desc">
+                                <p>Araba Kiralama</p>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="header_bottom_right_images">
+
+                        <div class="slider" style="width:650px ; height:350px">
+                            <ul class="rslides" id="slider1">
+                                @foreach (var item in Model)
+                                {
+                                    <li><img src="~/images/@item.BlogImage" style="width:645px ; height:345px" alt=""></li>
+                                }
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <div class"content">
+        <div class="wrap">
+            <div class="wrapper">
+                <div class="con-top">
+                    <h3>Tatil Seyahat Bloğuma Hoşgeldiniz!</h3>
+                    <p>
+                        Seyahat, her adımda yeni bir şeyler öğreten, nereye yapılırsa yapılsın insanın zihnini açan ve geliştiren; dünyaya, insanlara farklı bir açıdan bakmayı sağlayan bir süreç. Son yıllarda özellikle gençler arasında giderek popülerleşen seyahat kültürünün daha da yaygınlaşması ile dünyanın eskisinden çok daha güzel bir yer olacağı kesin.
+
+                        Toplumumuzda ilkokul döneminden itibaren öğretilen ev, araba satın alma gibi hayata entegre olma modellerinin yavaş yavaş anlamını kaybettiği, yeni neslin bütçesini daha çok seyahate harcamak istediği farklı araştırmalarda dile getiriliyor. Pahalı şeyler almayan, satın almak yerine kiralamayı tercih eden bu neslin seyahat deneyimine önem vermesi, yalnızca dünyadaki uzakları yakın etmekle kalmayacak, insanları birbirine daha da yaklaştıracağı inancındayım.
+                    </p>
+                </div>
+                @Html.Action("Partial1","Home")
+                <div class="grids">
+                    <div class="box1">
+                        @Html.Action("Partial3","Home")
+                        @Html.Action("Partial4","Home")         
+                        <div class="clear"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+

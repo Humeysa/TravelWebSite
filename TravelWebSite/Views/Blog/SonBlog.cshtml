@@ -1,0 +1,9 @@
+﻿<div class="recent">
+    <h3>Son Bloglar</h3>
+    <ul>
+        @foreach (var item in Model.sonblogs)
+        {
+            <li><a href="/Blog/BlogDetay/@item.Id">@item.Baslik</a></li>
+        }
+    </ul>
+</div>

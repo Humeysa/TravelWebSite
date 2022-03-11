@@ -1,0 +1,14 @@
+﻿<div class="comments">
+    <h3>Son Yorumlar</h3>
+    <ul>
+        @foreach (var item in Model.sonyorums)
+        {
+            <li>
+                <a href="/Blog/BlogDetay/@item.Blogid">
+
+                @item.KullaniciAdi ~ @item.Blog.Baslik 
+                </a>
+            </li>
+        }
+    </ul>
+</div>

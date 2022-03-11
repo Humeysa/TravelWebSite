@@ -1,0 +1,47 @@
+﻿@model List<TravelWebSite.Models.Siniflar.Yorumlar>
+@{
+    ViewBag.Title = "YorumListesi";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<h2>Yorum Listesi</h2>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Kullanıcı</th>
+            <th>Mail</th>
+            <th>Yorum</th>
+            <th>Blog</th>
+            <th>Sil</th>
+            <th>Güncelle</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.ID</td>
+                <td>@item.KullaniciAdi</td>
+                <td>@item.Mail</td>
+                <td>@item.Yorum</td>
+                <td>@item.Blog.Baslik</td>
+                <td>
+                    <a href="/Admin/YorumDelete/@item.ID" class="btn btn-danger">
+                        Sil
+                        <i class="fa-solid fa-trash-can"></i>
+                    </a>
+                </td>
+                <td>
+                    <a href="/Admin/YorumGet/@item.ID" class="btn btn-warning">
+                        Güncelle
+                        <i class="fa-solid fa-pen-to-square"></i>
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

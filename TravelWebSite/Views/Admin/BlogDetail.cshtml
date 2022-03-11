@@ -1,0 +1,55 @@
+﻿@model TravelWebSite.Models.Siniflar.Blog
+
+@{
+    ViewBag.Title = "BlogDetail";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Blog Detayı</title>
+</head>
+<body>
+    <div>
+        <h4>Blog Detayı</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Baslik)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Baslik)
+            </dd>
+            <br />
+            <dt>
+                @Html.DisplayNameFor(model => model.Tarih)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Tarih)
+            </dd>
+            <br />
+            <dt>
+                @Html.DisplayNameFor(model => model.Aciklama)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Aciklama)
+            </dd>
+            <br />
+            <dt>
+                @Html.DisplayNameFor(model => model.BlogImage)
+            </dt>
+
+            <dd>
+                <img src="/images/@Html.DisplayFor(model => model.BlogImage)" style="width:500px ; height:300px"/>
+            </dd>
+            <br />
+        </dl>
+    </div>
+</body>
+</html>

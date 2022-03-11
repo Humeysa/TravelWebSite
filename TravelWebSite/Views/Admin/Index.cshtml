@@ -1,0 +1,54 @@
+﻿@model List<TravelWebSite.Models.Siniflar.Blog>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+<h2>Blog Listesi</h2>
+<br />
+<table class=" table table-bordered">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>BAŞLIK</th>
+            <th>Sil</th>
+            <th>Güncelle</th>
+            <th>Detaylar</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Baslik</td>
+                <td>
+                    <a href="/Admin/BlogDelete/@item.Id" class="btn btn-danger">
+                        Sil
+                        <i class="fa-solid fa-trash-can"></i>
+                    </a>
+                </td>
+                <td>
+                    <a href="/Admin/BlogGet/@item.Id" class="btn btn-warning">
+                        Güncelle
+                        <i class="fa-solid fa-pen-to-square"></i>
+                    </a>
+                </td>
+                <td>
+                    <a href="/Admin/BlogDetail/@item.Id" class="btn btn-default">
+                        Detaylar
+                        <i class="fa-solid fa-circle-info"></i>
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a href="/Admin/YeniBlog" class="btn btn-primary">Yeni Blog Ekle</a>
+<br />
+<br />
+<br />
+
